@@ -25,23 +25,18 @@
     <main>
         <div class="container">
 
-        <div class="consertarcgd" id="biografia">.</div>
-
-        <section class="bloco" style="display: flex; align-items: center; gap: 20px;">
-            <div style="flex: 1;">
+        <section id="biografia" class="bloco-2">
+            <div class="biografia-text">
                 <h2><b>George Simon Ohm</b></h2>
-                <h3 style="margin: 0px; margin-bottom: 10px;"><b>(1787-1854)</b></h3>
+                <h3 class="subtitulo"><b>(1787-1854)</b></h3>
                 <p>Foi um físico e matemático que nasceu em Erlangen, na Alemanha. Iniciou sua carreira como professor de  matemática no Colégio dos Jesuítas, em 1825. Realizou experiências com fios condutores de diversas espessuras e comprimentos, e, a partir de suas observações, definiu o conceito de resistência elétrica. Em 1827, publicou seu mais importante trabalho, "O circuito galvânico examinado matematicamente", trabalho que definiu o que conhecemos hoje como A Lei de Ohm.</p>
             </div>
             <div>
                 <img src="_imagens/Georg_Simon_Ohm_(1789-1854).jpg" alt="George Simon Ohm" class="george">
             </div>
         </section>
-        
 
-        <div class="consertarcgd" id="primeira-lei">.</div>
-
-        <section class="bloco">
+        <section id="primeira-lei" class="bloco">
             <h2>1ª Lei de Ohm</h2>
             
             <p>A Primeira Lei de Ohm estabelece uma relação entre três conceitos essenciais da eletricidade: <b>tensão (V)</b>, <b>corrente elétrica (I)</b> e <b>resistência (R).</b></p>
@@ -69,10 +64,8 @@
             <p>Rearranje a fórmula: R = V / I. Exemplo: Se a tensão é 10 V e a corrente é 2 A, a resistência será R = 10 / 2 = 5 Ω.</p>
             <img src="_imagens/resistencia.PNG" alt="Fórmula da resistência">
         </section>
-
-        <div class="consertarcgd" id="segunda-lei">.</div>
         
-        <section class="bloco">
+        <section id="segunda-lei" class="bloco">
             <h2>2ª Lei de Ohm</h2>
 
             <p>A Segunda Lei de Ohm estabelece a relação entre a <b>resistência elétrica (R)</b> e as propriedades físicas do condutor, como seu <b>comprimento (L)</b>, área da <b>seção transversal (A)</b> e <b>resistividade do material (ρ)</b>.</p>
@@ -95,9 +88,7 @@
             <p>A resistência elétrica é inversamente proporcional à área da seção do condutor. Ou seja, quanto maior for a espessura do fio, menor será a resistência, facilitando a passagem da corrente elétrica.</p>
         </section>
 
-        <div class="consertarcgd" id="exemplos">.</div>
-
-        <section class="bloco">
+        <section id="exemplos" class="bloco">
             <h2>Exemplos</h2>
 
             <h3><b>Usando a 1ª Lei de Ohm</b></h3>
@@ -257,7 +248,7 @@
             <br>
             <h2><b>Simulação: Lei de Ohm (V = I × R)</b></h2>
             <br>
-            <div class="container" style="color: #444;">
+            <div class="container">
                 <div class="slider-container">
                     <label class="slider-label" for="tensao"><b>Tensão (V):</b></label>
                     <input type="number" id="tensao" class="slider" min="0" max="100" step="0.1" value="50" oninput="updateValues('tensao')">
@@ -275,8 +266,7 @@
                 </div>
             </div>
             <div class="equation">
-                <br>
-                <span id="equation-values" style="font-size: 20px; color: #444;">V = 50.0V, I = 5.0A, R = 10.0Ω</span>
+                <span id="equation-values">V = 50.0V, I = 5.0A, R = 10.0Ω</span>
             </div>       
         </section>
         
@@ -297,27 +287,6 @@
         </div>
     </div>
     </main>
-        <script> 
-            function updateValues(changed) {
-                var tensao = parseFloat(document.getElementById("tensao").value);
-                var corrente = parseFloat(document.getElementById("corrente").value);
-                var resistencia = parseFloat(document.getElementById("resistencia").value);
-                if (changed === 'resistencia') {
-                    tensao = corrente * resistencia;
-                    document.getElementById("tensao").value = tensao.toFixed(1);
-                } else if (changed === 'tensao') {
-                    resistencia = tensao / (corrente || 1);
-                    document.getElementById("resistencia").value = resistencia.toFixed(1);
-                } else if (changed === 'corrente') {
-                    tensao = corrente * resistencia;
-                    document.getElementById("tensao").value = tensao.toFixed(1);
-                }
-                document.getElementById("tensao-value").textContent = tensao.toFixed(1);
-                document.getElementById("corrente-value").textContent = corrente.toFixed(1);
-                document.getElementById("resistencia-value").textContent = resistencia.toFixed(1);
-                document.getElementById("equation-values").textContent = `V = ${tensao.toFixed(1)}V, I = ${corrente.toFixed(1)}A, R = ${resistencia.toFixed(1)}Ω`;
-            }
-            window.onload = updateValues;
-        </script>     
+    <script src="/_js/calculadora.js"></script>
 </body>
 </html>
