@@ -245,3 +245,13 @@ footer ul li a:hover{
 .slider-container{
     color: #444;
 }
+
+.formula-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 30px 100px;
+}
+
+.equation{
+    margin-top: 20px;
+}
